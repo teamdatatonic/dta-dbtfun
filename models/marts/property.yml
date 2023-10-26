@@ -1,0 +1,24 @@
+models:
+  - name: <MODEL NAME>
+    description: <MODEL DESCRIPTION>
+    columns:
+      - name: customerid
+      - name: firstname
+      - name: lastname
+      - name: email
+      - name: phonenumber
+      - name: address
+      - name: city
+      - name: state
+      - name: country
+      - name: zipcode
+      - name: dob
+      - name: purchaseid
+      - name: skypassid
+      - name: purchasedate
+      - name: purchasetype
+      - name: insertat
+      - name: quantity
+      - name: skypasstype
+      - name: skypassdesc
+      - name: cost
