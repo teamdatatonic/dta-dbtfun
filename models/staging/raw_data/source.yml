@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: <SOURCE NAME>
+    database: <DATABASE OR PROJECT ID>
+    schema: <SCHEMA OR DATASET ID>
+    tables:
+      - name: <RAW TABLE NAME>
+      - name: <RAW TABLE NAME>
+      - name: <RAW TABLE NAME>

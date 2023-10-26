@@ -1,18 +1,18 @@
-with <TMP_TABLE_NAME> as (
+with customers as (
     select 
-        customer_id as <NEW CUSTOMER ID ALIAS>,
-        first_name as <NEW FIRSTNAME ALIAS>,
-        last_name as <NEW LASTNAME ID ALIAS>,
+        customer_id as customerid,
+        first_name as firstname,
+        last_name as lastname,
         email,
-        phone_number as <NEW PHONE NUMBER ALIAS>,
+        phone_number as phonenumber,
         address,
         city,
         state,
-        zip_code as <NEW ZIP CODE ALIAS>,
+        zip_code as zipcode,
         country,
         dob
     from
-        <DATABASE OR PROJECT ID>.<SCHEMA OR DATASET>.<TABLE NAME>
+        <SOURCE FUNCTION THAT INCLUDES SOURCE NAME AND RAW TABLE NAME>
 )
 
-select * from <TMP_TABLE_NAME>
+select * from customers

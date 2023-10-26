@@ -1,11 +1,11 @@
-with <TMP_TABLE_NAME> as (
+with sky_passes as (
     select 
-        sky_pass_id as <NEW SKY PASS ID ALIAS>,
-        sky_pass_type as <NEW SKY PASS TYPE ALIAS>,
-        sky_pass_description as <NEW SKY PASS DESC ALIAS>,
+        sky_pass_id as skypassid,
+        sky_pass_type as skypasstype,
+        sky_pass_description as skypassdesc,
         cost
     from
-        <DATABASE OR PROJECT ID>.<SCHEMA OR DATASET>.<TABLE NAME>
+        <SOURCE FUNCTION THAT INCLUDES SOURCE NAME AND RAW TABLE NAME>
 )
 
-select * from <TMP_TABLE_NAME>
+select * from sky_passes
