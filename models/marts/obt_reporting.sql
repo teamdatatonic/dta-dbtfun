@@ -1,6 +1,6 @@
 {{
     config (
-        materialized="<MATERIALIZATION TYPE>"
+        materialized="table"
     )
 }}
 
@@ -8,9 +8,9 @@ with <TMP OBT TABLE NAME> as (
     select
         *
     from
-        <REF TO STG_PURCHASES MODEL>
-        left join <REF TO STG_CUSTOMERS MODEL> using(customerid)
-        left join <REF TO STG_SKY_PASSES MODEL> using(skypassid)
+        {{ref("stg_customers")}}
+        left join <REF TO INT_CUSTOMERS_USERNAMES MODEL> using(customerid)
+        left join {{ref("stg_sky_passes")}} using(skypassid)
 )
 
 select * from <TMP OBT TABLE NAME>

@@ -38,7 +38,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   <YOUR DBT PROJECT NAME>:
     # Applies to all files under models/example/
-    <STAGING LAYER NAME>:
+    staging:
       materialized: view
-    <MARTS LAYER NAME>:
+    marts:
       materialized: table
+seeds:
+  <YOUR DBT PROJECT NAME>:
+    usernames:
+      +column_types:
+        customerid: <CUSTOMER ID DATA TYPE>
+        username: <USERNAME DATA TYPE>
+        date_of_registration: <DATE OF REGISTRATION DATA TYPE>
