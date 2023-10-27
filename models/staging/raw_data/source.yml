@@ -5,6 +5,58 @@ sources:
     database: <DATABASE OR PROJECT ID>
     schema: <SCHEMA OR DATASET ID>
     tables:
-      - name: <RAW TABLE NAME>
-      - name: <RAW TABLE NAME>
-      - name: <RAW TABLE NAME>
+    - name: customers
+      columns:
+      - name: customer_id
+        tests:
+        - <GENERIC UNIQUE TEST>
+        - <GENERIC NOT NULL TEST>
+      - name: email
+        tests:
+          - <NAME OF CUSTOM GENERIC TEST>
+    - name: purchases
+      freshness: 
+        warn_after:
+          count: 1
+          period: day
+        error_after:
+          count: 2
+          period: day
+      loaded_at_field: _etl_loaded_at
+      columns:
+      - name: purchase_id
+        tests:
+        - <GENERIC UNIQUE TEST>
+        - <GENERIC NOT NULL TEST>
+      - name: sky_pass_id
+        tests:
+          - relationships:
+              to: source('<SOURCE NAME>', 'sky_passes')
+              field: sky_pass_id
+      - name: customer_id
+        tests:
+          - relationships:
+              field: customer_id
+              to: source('<SOURCE NAME>', 'customers')
+      - name: purchase_type
+        tests:
+          - accepted_values:
+              values:
+                - "credit_card"
+                - "debit_card"
+                - "paypall"
+                - "prepaid"
+    - name: sky_passes
+      columns:
+      - name: sky_pass_id
+        tests:
+        - <GENERIC UNIQUE TEST>
+        - <GENERIC NOT NULL TEST>
+      - name: sky_pass_type
+        tests:
+        - accepted_values:
+            values:
+              - "Entertainment"
+              - "Sports"
+              - "Kids"
+              - "Cinema"
