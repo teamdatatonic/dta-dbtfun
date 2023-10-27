@@ -1,4 +1,4 @@
-{% set purchase_types = <LIST OF PURCHASE TYPES>%}
+{% set purchase_types = dbt_utils.get_column_values(table=<REF TO STG_PURCHASES MODEL>, column='<PURCHASE TYPE COLUMN>')%}
 with purchases as (
     select * from {{ref("stg_purchases")}}
 ),

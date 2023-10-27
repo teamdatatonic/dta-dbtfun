@@ -1,0 +1,3 @@
+packages:
+  - package: <DBT UTILS PACKAGE>
+    version: <PACKAGE VERSION>
