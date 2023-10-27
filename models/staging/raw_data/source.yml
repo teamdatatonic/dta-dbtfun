@@ -7,14 +7,16 @@ sources:
     tables:
     - name: customers
       columns:
+      description: <YOUR DESCRIPTION HERE>
       - name: customer_id
         tests:
-        - <GENERIC UNIQUE TEST>
-        - <GENERIC NOT NULL TEST>
+        - unique
+        - not_null
       - name: email
         tests:
           - <NAME OF CUSTOM GENERIC TEST>
     - name: purchases
+      description: <YOUR DESCRIPTION HERE>
       freshness: 
         warn_after:
           count: 1
@@ -26,8 +28,8 @@ sources:
       columns:
       - name: purchase_id
         tests:
-        - <GENERIC UNIQUE TEST>
-        - <GENERIC NOT NULL TEST>
+        - unique
+        - not_null
       - name: sky_pass_id
         tests:
           - relationships:
@@ -47,11 +49,12 @@ sources:
                 - "paypall"
                 - "prepaid"
     - name: sky_passes
+      description: <YOUR DESCRIPTION HERE>
       columns:
       - name: sky_pass_id
         tests:
-        - <GENERIC UNIQUE TEST>
-        - <GENERIC NOT NULL TEST>
+        - unique
+        - not_null
       - name: sky_pass_type
         tests:
         - accepted_values:

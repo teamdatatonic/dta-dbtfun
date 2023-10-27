@@ -14,7 +14,7 @@ models:
       - name: zipcode
       - name: dob
   - name: <MODEL NAME>
-    description: <MODEL DESCRIPTION>
+    description: '{{doc("<NAME OF THE CUSTOM DOC>")}}'
     columns:
       - name: purchaseid
       - name: customerid
