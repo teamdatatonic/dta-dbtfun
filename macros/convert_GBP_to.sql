@@ -1,0 +1,7 @@
+{% macro <NAME OF MACRO>(<COST IN POUNDS PARAM>, <CURRENCY PARAM>='EUR') %}
+    case
+        when '<VALUE OF CURRENCY PARAM>' = 'USD' then <VALUE OF COST IN POUNDS PARAM> * 1.20
+        when '<VALUE OF CURRENCY PARAM>' = 'JPY' then <VALUE OF COST IN POUNDS PARAM> * 155.75
+        when '<VALUE OF CURRENCY PARAM>' = 'EUR' then <VALUE OF COST IN POUNDS PARAM> * 1.18
+    end
+{% endmacro%}
