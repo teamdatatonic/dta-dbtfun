@@ -1,0 +1,5 @@
+customer_id,first_name,last_name,email,phone_number,address,city,state,zip_code,country,dob
+1,John,Smith,john.smith@example.com,1-800-555-1212,123 Main Street,Anytown,CA,91234,USA,1990-01-01
+2,Jane,Doe,customer2@example.com,1-800-555-1213,456 Elm Street,Anytown,CA,91235,USA,1983-04-19
+4,Mary,Johnson,customer4@example.com,1-800-555-1215,1011 Pine Street,Anytown,CA,91237,USA,1997-03-02
+3,Bill,Jones,customer3@example.com,1-800-555-1214,789 Oak Street,Anytown,CA,91236,USA,1996-11-12
